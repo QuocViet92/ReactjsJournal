@@ -6,8 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
    
-   display: flex;
-   justify-content: center;
 }
 
 code {
@@ -15,7 +13,7 @@ code {
     monospace;
 }
 .container{
-  width: 550px;
+  width: 100%;
 }
 nav{
   display:  flex;
@@ -32,25 +30,35 @@ main{
   gap: 30px;
   padding: 20px;
 }
-h5{
-  font-size:  0.90625em; /*14.5*/
+h1{
+  font-size: 3rem;
+}
+nav >h5 , nav >i{
+  font-size:  2rem;
   margin: 0;
 }
 .card{
   width:100% ;
   display: flex;
   align-items: center;
-  gap: 20px;
+  height: 300px;
+  justify-content: space-between;
 }
 .card >img{
-  width: 125px;
-  height: 170px;
+  width: 35%;
+  height: 90%;
   border-radius: 5px;
 }
 
 .info{
+  display: grid;
+  grid-template-rows: auto auto auto auto ;
+  width: 62%;
   font-size: 10.5px;
-  flex-grow: 1;
+  font-size: 1rem;
+}
+.info p{
+  margin: 0.5rem 0;
 }
 .from{
   display:  flex;
@@ -70,4 +78,31 @@ h5{
 .info i{
   color: #F55A5A  ;
 }
+.date{
+  font-weight: lighter;
+}
 
+@media (max-width: 768px){
+  h1{
+    font-size: 28px;
+  }
+  .card{
+    flex-direction: column;
+    height: auto;
+    align-items: start;
+  }
+  .card img{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .card p{
+    margin: 5px 0;
+  }
+  .info{
+    width: 100%;
+  }
+  .from{
+    grid-row: 2/3;
+    font-size: 12px;
+  }
+}
